@@ -1,0 +1,11 @@
+const fs = require('fs');
+const crypto = require('crypto');
+let path = "C://Users/Public/myfile.txt";
+
+const fileBuffer = fs.readFileSync(path);
+const hashSum = crypto.createHash('sha1');
+hashSum.update(fileBuffer);
+
+const hex = hashSum.digest('hex');
+
+console.log(hex);
